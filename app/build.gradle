@@ -33,22 +33,34 @@ android {
         }
     }
 }
+ext{
+    support = '23.2.0'
+    retrofit = '2.0.0-beta4'
+    dagger = '2.0.2'
+    rxjava = '1.1.0'
+}
+
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
 
-
-
-    apt 'com.google.dagger:dagger-compiler:2.0.2'
+    compile "com.google.dagger:dagger:${dagger}"
+    apt "com.google.dagger:dagger-compiler:${dagger}"
     provided 'javax.annotation:jsr250-api:1.0'
-    compile 'com.android.support:appcompat-v7:23.2.0'
-    compile 'com.android.support:design:23.2.0'
+
     compile 'com.jakewharton:butterknife:5.1.1'
-    compile 'com.android.support:recyclerview-v7:23.2.0'
-    compile 'io.reactivex:rxandroid:1.1.0'
-    compile 'io.reactivex:rxjava:1.1.0'
-    compile 'com.squareup.retrofit:retrofit:1.9.0'
-    compile 'com.google.dagger:dagger:2.0.2'
-    compile 'com.android.support:support-v4:23.2.0'
+
+    compile "com.android.support:appcompat-v7:${support}"
+    compile "com.android.support:design:${support}"
+    compile "com.android.support:recyclerview-v7:${support}"
+    compile "com.android.support:support-v4:${support}"
+
+    compile "io.reactivex:rxandroid:${rxjava}"
+    compile "io.reactivex:rxjava:${rxjava}"
+
+    compile "com.squareup.retrofit2:retrofit:${retrofit}"
+    compile "com.squareup.retrofit2:adapter-rxjava:${retrofit}"
+    compile "com.squareup.retrofit2:converter-gson:${retrofit}"
+
 }
