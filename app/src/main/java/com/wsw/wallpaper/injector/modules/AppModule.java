@@ -1,5 +1,6 @@
 package com.wsw.wallpaper.injector.modules;
 
+import com.wsw.wallpaper.R;
 import com.wsw.wallpaper.WallPaperApplication;
 
 import javax.inject.Singleton;
@@ -21,8 +22,13 @@ public class AppModule {
 
     @Singleton
     @Provides
-    WallPaperApplication provideWallPaperApplication(){
-        return wallPaperApplication;
+    public WallPaperApplication provideWallPaperApplication() {
+        return this.wallPaperApplication;
     }
 
+    @Singleton
+    @Provides
+    public String[] provideTitles() {
+        return wallPaperApplication.getResources().getStringArray(R.array.image_title);
+    }
 }

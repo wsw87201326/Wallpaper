@@ -6,7 +6,8 @@
 package com.wsw.wallpaper.injector.modules;
 
 
-import android.content.Context;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 
 import com.wsw.wallpaper.injector.Activity;
 
@@ -15,14 +16,19 @@ import dagger.Provides;
 
 @Module
 public class ActivityModule {
-    private final Context mContext;
+    private final AppCompatActivity appCompatActivity;
 
-    public ActivityModule(Context mContext) {
-        this.mContext = mContext;
+    public ActivityModule(AppCompatActivity appCompatActivity) {
+        this.appCompatActivity = appCompatActivity;
     }
 
     @Provides @Activity
-    Context provideActivityContext() {
-        return mContext;
+    AppCompatActivity provideAppCompatActivity() {
+        return this.appCompatActivity;
+    }
+
+    @Provides @Activity
+    FragmentManager provideFragmentManager(){
+        return appCompatActivity.getSupportFragmentManager();
     }
 }

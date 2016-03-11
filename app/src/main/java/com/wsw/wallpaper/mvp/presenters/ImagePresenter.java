@@ -1,7 +1,6 @@
 package com.wsw.wallpaper.mvp.presenters;
 
 import com.wsw.wallpaper.mvp.views.IView;
-import com.wsw.wallpaper.mvp.views.MainView;
 
 import javax.inject.Inject;
 
@@ -9,12 +8,10 @@ import javax.inject.Inject;
  * Create By :wsw
  * 2016-02-26 09:44
  */
-public class MainPresenter implements Presenter {
-    MainView view;
+public class ImagePresenter implements Presenter {
 
     @Inject
-    MainPresenter() {
-
+    public ImagePresenter() {
     }
 
     @Override
@@ -34,7 +31,6 @@ public class MainPresenter implements Presenter {
 
     @Override
     public void attachView(IView v) {
-        view = (MainView) v;
     }
 
     @Override

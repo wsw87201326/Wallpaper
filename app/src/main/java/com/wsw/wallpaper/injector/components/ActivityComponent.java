@@ -6,16 +6,18 @@
 package com.wsw.wallpaper.injector.components;
 
 
-import android.content.Context;
+import android.support.v7.app.AppCompatActivity;
 
 import com.wsw.wallpaper.injector.Activity;
 import com.wsw.wallpaper.injector.modules.ActivityModule;
+import com.wsw.wallpaper.ui.activities.BaseActivity;
 
 import dagger.Component;
 
 @Activity
 @Component(dependencies = AppComponent.class, modules = ActivityModule.class)
 public interface ActivityComponent {
+    void Inject(BaseActivity baseActivity);
 
-    Context context();
+    AppCompatActivity activity();
 }

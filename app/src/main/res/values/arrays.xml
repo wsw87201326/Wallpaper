@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="image_title">
+        <item>美女</item>
+        <item>明星</item>
+        <item>动漫</item>
+        <item>风景</item>
+        <item>汽车</item>
+        <item>游戏</item>
+        <item>艺术</item>
+        <item>摄影</item>
+        <item>萌宠</item>
+    </string-array>
+</resources>
