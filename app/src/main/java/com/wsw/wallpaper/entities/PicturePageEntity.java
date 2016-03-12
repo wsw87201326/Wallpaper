@@ -1,5 +1,6 @@
 package com.wsw.wallpaper.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -12,7 +13,7 @@ public class PicturePageEntity {
 
     @Inject
     PicturePageEntity() {
-
+        this.list = new ArrayList<>();
     }
 
     private int total;

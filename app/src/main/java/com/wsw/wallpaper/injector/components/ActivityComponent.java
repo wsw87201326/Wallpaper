@@ -18,6 +18,8 @@ import dagger.Component;
 @Component(dependencies = AppComponent.class, modules = ActivityModule.class)
 public interface ActivityComponent {
     void Inject(BaseActivity baseActivity);
+    
+    String[] getTitles();
 
     AppCompatActivity activity();
 }

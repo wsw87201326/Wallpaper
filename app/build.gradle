@@ -67,4 +67,5 @@ dependencies {
     compile "com.squareup.retrofit2:retrofit:${retrofit}"
     compile "com.squareup.retrofit2:adapter-rxjava:${retrofit}"
     compile "com.squareup.retrofit2:converter-gson:${retrofit}"
+
 }

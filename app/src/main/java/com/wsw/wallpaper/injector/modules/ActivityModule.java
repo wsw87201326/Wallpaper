@@ -9,6 +9,7 @@ package com.wsw.wallpaper.injector.modules;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
+import com.wsw.wallpaper.R;
 import com.wsw.wallpaper.injector.Activity;
 
 import dagger.Module;
@@ -31,4 +32,11 @@ public class ActivityModule {
     FragmentManager provideFragmentManager(){
         return appCompatActivity.getSupportFragmentManager();
     }
+
+    @Activity
+    @Provides
+    public String[] provideTitles() {
+        return appCompatActivity.getResources().getStringArray(R.array.image_title);
+    }
+
 }

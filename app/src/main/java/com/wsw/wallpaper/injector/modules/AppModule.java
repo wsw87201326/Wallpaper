@@ -1,7 +1,7 @@
 package com.wsw.wallpaper.injector.modules;
 
-import com.wsw.wallpaper.R;
 import com.wsw.wallpaper.WallPaperApplication;
+import com.wsw.wallpaper.mvp.model.repository.PictureRepository;
 
 import javax.inject.Singleton;
 
@@ -14,21 +14,23 @@ import dagger.Provides;
  */
 @Module
 public class AppModule {
-    private final WallPaperApplication wallPaperApplication;
+    private final WallPaperApplication mWallPaperApplication;
 
     public AppModule(WallPaperApplication wallPaperApplication) {
-        this.wallPaperApplication = wallPaperApplication;
+        this.mWallPaperApplication = wallPaperApplication;
     }
 
     @Singleton
     @Provides
     public WallPaperApplication provideWallPaperApplication() {
-        return this.wallPaperApplication;
+        return this.mWallPaperApplication;
     }
 
-    @Singleton
+
     @Provides
-    public String[] provideTitles() {
-        return wallPaperApplication.getResources().getStringArray(R.array.image_title);
+    @Singleton
+    PictureRepository providePictureRepository(PictureRepository pictureRepository) {
+        return pictureRepository;
     }
+
 }

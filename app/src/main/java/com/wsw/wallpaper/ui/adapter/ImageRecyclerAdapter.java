@@ -22,16 +22,15 @@ import butterknife.ButterKnife;
  */
 public class ImageRecyclerAdapter extends RecyclerView.Adapter<ImageRecyclerAdapter.ImageViewHolder> {
 
-    private final PageEntity page;
+    private PageEntity page;
     private final Context mContext;
-    private final ImageClickListener imageClickListener;
+    private ImageClickListener imageClickListener;
 
     public ImageRecyclerAdapter(PageEntity page, Context mContext, ImageClickListener imageClickListener) {
         this.page = page;
         this.mContext = mContext;
         this.imageClickListener = imageClickListener;
     }
-
 
     @Override
     public ImageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -48,6 +47,11 @@ public class ImageRecyclerAdapter extends RecyclerView.Adapter<ImageRecyclerAdap
     @Override
     public int getItemCount() {
         return this.page.getTotalItemNum();
+    }
+
+    public void setPageEntity(PageEntity pageEntity) {
+        this.page = pageEntity;
+        this.notifyDataSetChanged();
     }
 
     public class ImageViewHolder extends RecyclerView.ViewHolder {

@@ -11,10 +11,10 @@ import rx.subscriptions.Subscriptions;
  * Create By :wsw
  * 2016-03-11 15:38
  */
-public abstract class UseCase {
+public abstract class UseCase<T> {
     private Subscription subscription = Subscriptions.empty();
 
-    protected abstract Observable buildUseCaseObservable();
+    protected abstract Observable<T> buildUseCaseObservable();
 
     @SuppressWarnings("unchecked")
     public void execute(Subscriber UseCaseSubscriber) {

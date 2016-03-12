@@ -7,10 +7,9 @@ import javax.inject.Inject;
  * 2016-03-11 16:50
  */
 public class PageEntity {
-    private static int defaultPageSize = 20;
     private int totalItemNum = 0;
-    private int curPage = 1;
-    PicturePageEntity picturePageEntity;
+    private int curPage = 0;
+    private PicturePageEntity picturePageEntity;
 
     @Inject
     public PageEntity(PicturePageEntity picturePageEntity) {
@@ -30,7 +29,24 @@ public class PageEntity {
         this.curPage = curPage;
     }
 
+    public int getNextPage() {
+        return curPage + 1;
+    }
+
     public PicturePageEntity getPicturePageEntity() {
         return picturePageEntity;
+    }
+
+    public PageEntity loadNextFinish(PicturePageEntity picturePageEntity) {
+        this.picturePageEntity.getList().addAll(picturePageEntity.getList());
+        curPage++;
+        totalItemNum = picturePageEntity.getList().size();
+        return this;
+    }
+
+    public void initialPage() {
+        totalItemNum = 0;
+        curPage = 0;
+        picturePageEntity = null;
     }
 }

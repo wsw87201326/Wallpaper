@@ -45,6 +45,7 @@ public class MainActivity extends BaseActivity implements HasComponent {
                 .activityModule(getActivityModule())
                 .appComponent(getApplicationComponent())
                 .build();
+        mainComponent.Inject(this);
     }
 
     @Override

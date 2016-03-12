@@ -2,6 +2,7 @@ package com.wsw.wallpaper.injector.components;
 
 import com.wsw.wallpaper.WallPaperApplication;
 import com.wsw.wallpaper.injector.modules.AppModule;
+import com.wsw.wallpaper.mvp.model.repository.PictureRepository;
 
 import javax.inject.Singleton;
 
@@ -14,7 +15,9 @@ import dagger.Component;
 @Singleton
 @Component(dependencies = AppModule.class)
 public interface AppComponent {
-    WallPaperApplication app();
 
-    String[] titles();
+    WallPaperApplication getWallPaperApplication();
+
+    PictureRepository getPictureRepository();
+
 }

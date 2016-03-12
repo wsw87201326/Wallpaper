@@ -3,11 +3,9 @@ package com.wsw.wallpaper.injector.modules;
 import dagger.Module;
 
 /**
- * Create By :wsw
- * 2016-02-26 09:35
+ * Created by wsw on 2016/3/12.
  */
 @Module
-public class MainActivityModule {
-
+public class MainModule {
 
 }
