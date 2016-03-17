@@ -12,8 +12,6 @@ import rx.Observable;
  */
 public interface WallpaperApi {
 
-
     @GET("j")
     Observable<PicturePageEntity> getPictureList(@Query("q") String title, @Query("src") String src, @Query("sn") int sn, @Query("pn") int pn);
-
 }

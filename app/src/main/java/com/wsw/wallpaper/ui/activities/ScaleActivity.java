@@ -9,15 +9,12 @@ import android.view.animation.AnimationUtils;
 import com.wsw.wallpaper.R;
 
 public class ScaleActivity extends AppCompatActivity {
-    private View mContentView;
-    private View mControlsView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scale);
-        mControlsView = findViewById(R.id.fullscreen_content_controls);
-        mContentView = findViewById(R.id.fullscreen_content);
+        View mContentView = findViewById(R.id.fullscreen_content);
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.splash);
         animation.setAnimationListener(new Animation.AnimationListener() {
             @Override
@@ -28,6 +25,7 @@ public class ScaleActivity extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 MainActivity.start(ScaleActivity.this);
+                ScaleActivity.this.finish();
             }
 
             @Override
@@ -35,6 +33,7 @@ public class ScaleActivity extends AppCompatActivity {
 
             }
         });
+        assert mContentView != null;
         mContentView.startAnimation(animation);
     }
 }

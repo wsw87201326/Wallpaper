@@ -82,7 +82,6 @@ public final class HttpLoggingInterceptor implements Interceptor {
 
     public interface Logger {
         void log(String message);
-
         /** A {@link Logger} defaults output appropriate for the current platform. */
         Logger DEFAULT = new Logger() {
             @Override public void log(String message) {

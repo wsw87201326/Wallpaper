@@ -1,5 +1,7 @@
 package com.wsw.wallpaper.mvp.presenters;
 
+import android.util.Log;
+
 import com.wsw.wallpaper.entities.PageEntity;
 import com.wsw.wallpaper.mvp.model.domain.DefaultSubscriber;
 import com.wsw.wallpaper.mvp.model.domain.PictureUseCase;
@@ -13,6 +15,7 @@ import javax.inject.Inject;
  * 2016-02-26 09:44
  */
 public class ImagePresenter implements Presenter {
+    private static final String TAG = "ImagePresenter";
     private final PictureUseCase mPictureUseCase;
     private IImageView mIImageView;
 
@@ -56,10 +59,13 @@ public class ImagePresenter implements Presenter {
 
         @Override
         public void onCompleted() {
+            Log.e(TAG,"onCompleted");
+
         }
 
         @Override
         public void onError(Throwable e) {
+            Log.e(TAG,"onError");
         }
 
         @Override

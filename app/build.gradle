@@ -26,6 +26,10 @@ android {
         vectorDrawables.useSupportLibrary = true
     }
 
+    aaptOptions {
+        additionalParameters "--no-version-vectors"
+    }
+
     buildTypes {
         release {
             minifyEnabled true
@@ -38,7 +42,7 @@ android {
     }
 }
 ext {
-    support = '23.2.0'
+    support = '23.2.1'
     retrofit = '2.0.0-beta4'
     dagger = '2.0.2'
     rxjava = '1.1.0'
@@ -60,6 +64,8 @@ dependencies {
     compile "com.android.support:appcompat-v7:${support}"
     compile "com.android.support:design:${support}"
     compile "com.android.support:support-v4:${support}"
+    compile "com.android.support:support-vector-drawable:${support}"
+    compile "com.android.support:animated-vector-drawable:${support}"
 
     compile "io.reactivex:rxandroid:${rxjava}"
     compile "io.reactivex:rxjava:${rxjava}"
@@ -67,5 +73,6 @@ dependencies {
     compile "com.squareup.retrofit2:retrofit:${retrofit}"
     compile "com.squareup.retrofit2:adapter-rxjava:${retrofit}"
     compile "com.squareup.retrofit2:converter-gson:${retrofit}"
+
 
 }

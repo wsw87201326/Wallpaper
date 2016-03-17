@@ -9,7 +9,6 @@ import com.wsw.wallpaper.ui.fragment.PictureFragment;
 import javax.inject.Inject;
 
 /**
- *
  * Created by 24363 on 2016/3/11.
  */
 public class ImageFragmentAdapter extends FragmentPagerAdapter {
